@@ -5,5 +5,5 @@ public class Occurence {
     private int weekday; // Day of Week; Sun = 0
     private String Time;
     private int duration; // Minutes
-    private Event[] events;
+    private Event events;
 }
