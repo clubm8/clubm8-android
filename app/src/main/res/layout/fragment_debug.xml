@@ -5,9 +5,33 @@
              tools:context="ch.clubm8.clubm8.DebugFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="a"
+        android:id="@+id/button1"
+        android:layout_gravity="left|top" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="b"
+        android:id="@+id/button2"
+        android:layout_gravity="center_horizontal|top" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="c"
+        android:id="@+id/button3"
+        android:layout_gravity="right|top" />
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"/>
+        android:layout_height="305dp"
+        android:text="@string/hello_blank_fragment"
+        android:layout_gravity="center" />
 
 </FrameLayout>
