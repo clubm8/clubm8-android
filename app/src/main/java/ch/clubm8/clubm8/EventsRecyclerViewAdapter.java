@@ -4,9 +4,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import ch.clubm8.clubm8.NewsFragment.OnListFragmentInteractionListener;
+import ch.clubm8.clubm8.EventsFragment.OnListFragmentInteractionListener;
 import ch.clubm8.clubm8.dummy.DummyContent.DummyItem;
 
 import java.util.List;
@@ -16,12 +17,12 @@ import java.util.List;
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerViewAdapter.ViewHolder> {
+public class EventsRecyclerViewAdapter extends RecyclerView.Adapter<EventsRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public NewsRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public EventsRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -29,7 +30,7 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.fragment_news, parent, false);
+                .inflate(R.layout.fragment_events, parent, false);
         return new ViewHolder(view);
     }
 
@@ -58,6 +59,7 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
+        public final ImageView mImageView;
         public final TextView mIdView;
         public final TextView mContentView;
         public DummyItem mItem;
@@ -65,8 +67,9 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.news_card_textview2);
-            mContentView = (TextView) view.findViewById(R.id.news_card_textview3);
+            mImageView = (ImageView) view.findViewById(R.id.event_card_textview);
+            mIdView = (TextView) view.findViewById(R.id.event_card_textview2);
+            mContentView = (TextView) view.findViewById(R.id.event_card_textview3);
         }
 
         @Override

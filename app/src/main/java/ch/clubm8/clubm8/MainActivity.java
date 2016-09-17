@@ -19,7 +19,7 @@ import java.util.List;
 import ch.clubm8.clubm8.dummy.DummyContent;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, ScheduleFragment.OnListFragmentInteractionListener, NewsFragment.OnListFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ScheduleFragment.OnListFragmentInteractionListener, NewsFragment.OnListFragmentInteractionListener, EventsFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +85,9 @@ public class MainActivity extends AppCompatActivity
             FragmentManager manager = getSupportFragmentManager();
             manager.beginTransaction().replace(R.id.main_relative_layout, fragment).commit();
         } else if (id == R.id.nav_events) {
-
+            EventsFragment fragment = new EventsFragment();
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.main_relative_layout, fragment).commit();
         } else if (id == R.id.nav_schedule) {
             ScheduleFragment fragment = new ScheduleFragment();
             FragmentManager manager = getSupportFragmentManager();
