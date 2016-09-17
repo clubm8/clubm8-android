@@ -1,6 +1,6 @@
 package ch.clubm8.clubm8.bl;
 
-public class Occurence {
+public class Occurrence {
     private long id;
     private int weekday; // Day of Week; Sun = 0
     private String Time;
