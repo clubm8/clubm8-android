@@ -17,7 +17,7 @@ import android.view.View;
 import ch.clubm8.clubm8.dummy.DummyContent;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, ScheduleFragment.OnListFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, ScheduleFragment.OnListFragmentInteractionListener, NewsFragment.OnListFragmentInteractionListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_news) {
-            // Handle the camera action
+            NewsFragment fragment = NewsFragment.newInstance(1);
+            FragmentManager manager = getSupportFragmentManager();
+            manager.beginTransaction().replace(R.id.main_relative_layout, fragment).commit();
         } else if (id == R.id.nav_events) {
 
         } else if (id == R.id.nav_schedule) {
@@ -102,6 +104,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onListFragmentInteraction(DummyContent.DummyItem item) {
-            
+
     }
 }

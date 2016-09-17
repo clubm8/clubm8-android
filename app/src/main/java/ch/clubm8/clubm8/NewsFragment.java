@@ -19,30 +19,44 @@ import ch.clubm8.clubm8.dummy.DummyContent.DummyItem;
  * Activities containing this fragment MUST implement the {@link OnListFragmentInteractionListener}
  * interface.
  */
-public class ScheduleFragment extends Fragment {
+public class NewsFragment extends Fragment {
 
+    // TODO: Customize parameter argument names
+    private static final String ARG_COLUMN_COUNT = "column-count";
     // TODO: Customize parameters
     private int mColumnCount = 1;
-
     private OnListFragmentInteractionListener mListener;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
      */
-    public ScheduleFragment() {
+    public NewsFragment() {
+    }
+
+    // TODO: Customize parameter initialization
+    @SuppressWarnings("unused")
+    public static NewsFragment newInstance(int columnCount) {
+        NewsFragment fragment = new NewsFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_COLUMN_COUNT, columnCount);
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (getArguments() != null) {
+            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_entry_list, container, false);
+        View view = inflater.inflate(R.layout.fragment_news_list, container, false);
 
         // Set the adapter
         if (view instanceof RecyclerView) {
@@ -53,7 +67,7 @@ public class ScheduleFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new EntryRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new NewsRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
     }
