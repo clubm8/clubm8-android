@@ -26,8 +26,6 @@ public class EventsFragment extends Fragment {
     // TODO: Customize parameters
     private int mColumnCount = 1;
     private OnListFragmentInteractionListener mListener;
-    private RecyclerView mUiRecyclerView;
-    private LinearLayoutManager mLinearLayoutManager;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -59,12 +57,6 @@ public class EventsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_events_list, container, false);
-
-//        mUiRecyclerView = (RecyclerView) view.findViewById(R.id.fragment_events_list);
-//        mLinearLayoutManager = new LinearLayoutManager(getActivity());
-//        mUiRecyclerView.setLayoutManager(mLinearLayoutManager);
-
-
 
         // Set the adapter
         if (view instanceof RecyclerView) {

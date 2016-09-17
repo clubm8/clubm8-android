@@ -5,27 +5,27 @@
         <item
             android:id="@+id/nav_news"
             android:icon="@drawable/ic_menu_news"
-            android:title="News"/>
+            android:title="@string/menu_navigation_news"/>
         <item
             android:id="@+id/nav_events"
             android:icon="@drawable/ic_menu_events"
-            android:title="Events"/>
+            android:title="@string/menu_navigation_events"/>
         <item
             android:id="@+id/nav_schedule"
             android:icon="@drawable/ic_menu_schedule"
-            android:title="Schedule"/>
+            android:title="@string/menu_navigation_schedule"/>
         <item
             android:id="@+id/nav_debug"
             android:icon="@drawable/ic_menu_debug"
             android:title="Debug"/>
     </group>
 
-    <item android:title="Management">
+    <item android:title="@string/menu_navigation_management">
         <menu>
             <item
                 android:id="@+id/nav_signin"
                 android:icon="@drawable/ic_menu_signin"
-                android:title="Sign in"/>
+                android:title="@string/menu_navigation_sign_in"/>
         </menu>
     </item>
 

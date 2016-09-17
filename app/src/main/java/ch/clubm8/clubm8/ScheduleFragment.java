@@ -96,7 +96,7 @@ public class ScheduleFragment extends Fragment implements WeekView.EventClickLis
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new EntryRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new ScheduleRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
         return view;
     }

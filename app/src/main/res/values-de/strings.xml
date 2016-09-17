@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ClubM8</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="app_description">Das Kimura Shukokai Logo</string>
+    <string name="app_subtitle">Die Stundenplan Applikation</string>
+    <string name="hello_blank_fragment"></string>
+    <string name="menu_navigation_events">Events</string>
+    <string name="menu_navigation_management">Verwaltung</string>
+    <string name="menu_navigation_news">News</string>
+    <string name="menu_navigation_schedule">Zeitplan</string>
+    <string name="menu_navigation_sign_in">Anmelden</string>
+    <string name="navigation_drawer_close">Navigationsleiste schliessen</string>
+    <string name="navigation_drawer_open">Navigationsleiste öffnen</string>
+</resources>

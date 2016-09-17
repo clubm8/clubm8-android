@@ -14,8 +14,4 @@
     tools:showIn="@layout/app_bar_main"
     android:id="@+id/main_relative_layout">
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Show some logo and maybe the new news here..."/>-->
 </RelativeLayout>
