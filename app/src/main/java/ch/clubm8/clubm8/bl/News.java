@@ -7,6 +7,14 @@ public class News {
     private String title;
     private String text;
 
+    public News(long id, String date, String time, String title, String text) {
+        this.id = id;
+        this.date = date;
+        this.time = time;
+        this.title = title;
+        this.text = text;
+    }
+
     public long getId() {
         return id;
     }

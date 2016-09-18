@@ -15,8 +15,11 @@ import android.widget.TextView;
 
 import com.loopj.android.http.*;
 
+import ch.clubm8.clubm8.bl.News;
 import cz.msebera.android.httpclient.Header;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
@@ -73,7 +76,25 @@ public class DebugFragment extends Fragment {
                 client.get(url, params, new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
-                        txtView.setText(response.toString());
+                        //txtView.setText(response.toString());
+                        try {
+                            JSONArray news = response.getJSONArray("objects");
+                            txtView.setText("");
+                            for (int i = 0; i < news.length(); i++) {
+                                JSONObject entry = news.getJSONObject(i);
+                                long id = entry.getLong("id");
+                                String date = entry.getString("date");
+                                String time = entry.getString("time");
+                                String title = entry.getString("title");
+                                String text = entry.getString("text");
+
+                                News n = new News(id, date, time, title, text);
+
+                                txtView.append("\n" + title);
+                            }
+                        } catch (JSONException e) {
+                            Log.e("ERROR", e.getMessage());
+                        }
                     }
 
                     public void onFailure(int statusCode, Header[] headers, Throwable t, JSONObject e) {
