@@ -1,16 +1,23 @@
 package ch.clubm8.clubm8;
 
 
+import android.app.DownloadManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.loopj.android.http.*;
+
+import cz.msebera.android.httpclient.Header;
+
+import org.json.JSONObject;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,6 +45,7 @@ public class DebugFragment extends Fragment {
         Button btn2 = (Button) v.findViewById(R.id.button2);
         Button btn3 = (Button) v.findViewById(R.id.button3);
 
+
         btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Cursor resultSet = mydatabase.rawQuery("Select * from TutorialsPoint", null);
@@ -56,12 +64,26 @@ public class DebugFragment extends Fragment {
 
         btn3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                txtView.setText("cleared.");
+
+                String url = "http://sb.lilo.ch/api/v1/news/";
+                AsyncHttpClient client = new AsyncHttpClient();
+                RequestParams params = new RequestParams();
+                params.put("q", "android");
+                params.put("rsz", "8");
+                client.get(url, params, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                        txtView.setText(response.toString());
+                    }
+
+                    public void onFailure(int statusCode, Header[] headers, Throwable t, JSONObject e) {
+                        // Handle the failure and alert the user to retry
+                        Log.e("ERROR", e.toString());
+                    }
+                });
             }
+
         });
-
-
-
         return v;
     }
 
